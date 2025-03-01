@@ -39,16 +39,16 @@ fetch(`https://api.tvmaze.com/shows/${id}`)
     dataContainergoto.innerHTML +=
       `<div class=">
         <div class="card row " style="display: flex;">
-        <img src="${data.image.original}" class="card-img-top" style="width: 300px; height:449px" alt="...">
-            <div class="card-body" style="display: flex; margin-left:30px" >
+        <img src="${data.image.original}" class="card-img-top" style="width: 300px; height:500px" alt="...">
+            <div class="card-body" style="display: flex; margin-left:30px; max-width: 900px; padding: 20px 30px" >
                 <h2 style="margin-left:30px">${data.name}</h2>
-                <p >${data.summary}</p>
-                <ul style="margin-left:20px">
-                <li>IMDB: ${data.rating.average}</li>
-                <li>Language: ${data.language}</li>
-                <li>Genre: ${data.genres}</li>
-                <li>Premiered: ${data.premiered}</li>
-                <li>Ended: ${data.ended}</li>
+                <p>${data.summary}</p>
+                <ul style="margin-left:20px; list-style: none">
+                <li style="margin-bottom: 10px;"><strong>IMDB:</strong> ${data.rating.average}</li>
+                <li style="margin-bottom: 10px;"><strong>Language:</strong> ${data.language}</li>
+                <li style="margin-bottom: 10px;"><strong>Genre:</strong> ${data.genres.join(", ")}</li>
+                <li style="margin-bottom: 10px;"><strong>Premiered:</strong> ${data.premiered}</li>
+                <li style="margin-bottom: 10px;"><strong>Ended:</strong> ${data.ended}</li>
                 </ul>
                 <div class="d-flex ">
                  <a href="${data.officialSite}"  class="btn btn-primary"  style="padding: 5px 30px; margin-left:25px ">Go to website</a>
