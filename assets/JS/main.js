@@ -11,12 +11,12 @@ fetch(baseURL)
         <img src="${data.image?.medium}" class="card-img-top" style="width: 286px; height:432px" alt="...">
         <div class="card-body">
             <h5 class="card-title">${data.name}</h5>
-            <p class="card-text">Premiere: ${data.premiered}</p>
+            <p class="card-text"><strong>Premiere:</strong> ${data.premiered}</p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">IMDB Rating: ${data.rating.average}</li>
-            <li class="list-group-item">Genre: ${data.genres}</li>
-            <li class="list-group-item">Language: ${data.language}</li>
+            <li class="list-group-item"><strong>IMDB:</strong> ${data.rating.average}</li>
+            <li class="list-group-item"><strong>Genre:</strong> ${data.genres.join(", ")}</li>
+            <li class="list-group-item"><strong>Language:</strong> ${data.language}</li>
         </ul>
         <div class="card-body-btn ">
             <a href="${data.officialSite}" class="btn btn-primary" >Go to website</a>
